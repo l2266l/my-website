@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #e6f7ff;
+      color: #333;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      color: #007acc;
+    }
+    .button-container {
+      margin: 20px;
+    }
+    .login-button {
+      padding: 12px 30px;
+      background-color: #E3FFEA;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 10px;
+      transition: background-color 0.3s ease;
+    }
+    .login-button:hover {
+      background-color: #c8f5d5;
+    }
+    .or-container {
+      margin: 20px;
+    }
+    .or-container p {
+      font-size: 18px;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Login</h1>
+
+  <div class="button-container">
+    <!-- Button for Student or Parent -->
+    <button class="login-button" onclick="location.href='student-login.html'">Student or Parent</button>
+  </div>
+
+  <div class="or-container">
+    <!-- OR Text -->
+    <p>OR</p>
+  </div>
+
+  <div class="button-container">
+    <!-- Button for Teacher -->
+    <button class="login-button" onclick="location.href='teacher-login.html'">Teacher</button>
+  </div>
+</body>
+</html>
+

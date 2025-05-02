@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book A Teacher</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #e6f7ff;
+      color: #333;
+      direction: ltr;
+    }
+
+    .header {
+      background-color: #d0f0ff;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #007acc;
+    }
+
+    .top-buttons button {
+      margin-left: 10px;
+      padding: 8px 16px;
+      font-size: 14px;
+      background-color: #E3FFEA;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .top-buttons button:hover {
+      background-color: #c0ffd5;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #007acc;
+      margin-bottom: 20px;
+    }
+
+    .search-bar {
+      width: 100%;
+      max-width: 500px;
+      padding: 12px;
+      font-size: 16px;
+      border: 2px solid #b3e0ff;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    p.subtitle {
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+
+    .teachers {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .teacher-card {
+      background-color: #ffffff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 200px;
+    }
+
+    .teacher-card h3 {
+      margin-top: 10px;
+      font-size: 18px;
+      color: #007acc;
+    }
+
+    .teacher-card p {
+      font-size: 14px;
+      margin: 5px 0 10px;
+    }
+
+    .book-btn {
+      background-color: #E3FFEA;
+      border: none;
+      padding: 8px 16px;
+      font-size: 14px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .subjects {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .subjects button {
+      background-color: white;
+      border: 2px solid #a8e6a2;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .view-more-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #E3FFEA;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo" id="logo-text">Book A Teacher</div>
+    <div class="top-buttons">
+      <button onclick="setLanguage('en')">English</button>
+      <button onclick="setLanguage('ar')">العربية</button>
+      <button onclick="window.location.href='login.html'">Login</button>
+      <button onclick="alert('Sign In clicked')">Sign In</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1 id="main-title">Find the Best Teachers for Any Subject</h1>
+    <input type="text" class="search-bar" placeholder="Search..." />
+    <p class="subtitle" id="subtitle">Now you can book your private lessons easily in Book A Teacher!</p>
+
+    <div class="teachers">
+      <div class="teacher-card">
+        <h3 id="teacher-lina">Ms. Lina</h3>
+        <p id="lina-subject">English - Online & in-person</p>
+        <button class="book-btn" id="book-lina">Book</button>
+      </div>
+      <div class="teacher-card">
+        <h3 id="teacher-ayesha">Ms. Ayesha</h3>
+        <p id="ayesha-subject">Islamic Studies - Online & in-person</p>
+        <button class="book-btn" id="book-ayesha">Book</button>
+      </div>
+      <div class="teacher-card">
+        <h3 id="teacher-khaled">Mr. Khaled</h3>
+        <p id="khaled-subject">Physics - Online & in-person</p>
+        <button class="book-btn" id="book-khaled">Book</button>
+      </div>
+    </div>
+
+    <button class="view-more-btn" id="view-teachers">View More</button>
+
+    <div class="subjects">
+      <button id="sub-physics">Physics</button>
+      <button id="sub-biology">Biology</button>
+      <button id="sub-chemistry">Chemistry</button>
+      <button id="sub-english">English</button>
+      <button id="sub-arabic">Arabic</button>
+      <button id="sub-math">Mathematics</button>
+    </div>
+
+    <button class="view-more-btn" id="view-subjects">View More</button>
+  </div>
+
+  <script>
+    function setLanguage(lang) {
+      const translations = {
+        en: {
+          'logo-text': 'Book A Teacher',
+          'main-title': 'Find the Best Teachers for Any Subject',
+          'subtitle': 'Now you can book your private lessons easily in Book A Teacher!',
+          'teacher-lina': 'Ms. Lina',
+          'lina-subject': 'English - Online & in-person',
+          'book-lina': 'Book',
+          'teacher-ayesha': 'Ms. Ayesha',
+          'ayesha-subject': 'Islamic Studies - Online & in-person',
+          'book-ayesha': 'Book',
+          'teacher-khaled': 'Mr. Khaled',
+          'khaled-subject': 'Physics - Online & in-person',
+          'book-khaled': 'Book',
+          'view-teachers': 'View More',
+          'sub-physics': 'Physics',
+          'sub-biology': 'Biology',
+          'sub-chemistry': 'Chemistry',
+          'sub-english': 'English',
+          'sub-arabic': 'Arabic',
+          'sub-math': 'Mathematics',
+          'view-subjects': 'View More'
+        },
+        ar: {
+          'logo-text': 'احجز مع مدرس',
+          'main-title': 'اعثر على أفضل المدرسين لأي مادة',
+          'subtitle': 'الآن يمكنك حجز دروسك الخاصة بسهولة في احجز مع مدرس!',
+          'teacher-lina': 'الآنسة لينا',
+          'lina-subject': 'اللغة الإنجليزية - عن بُعد وحضوريًا',
+          'book-lina': 'احجز',
+          'teacher-ayesha': 'الآنسة عائشة',
+          'ayesha-subject': 'الدراسات الإسلامية - عن بُعد وحضوريًا',
+          'book-ayesha': 'احجز',
+          'teacher-khaled': 'الأستاذ خالد',
+          'khaled-subject': 'الفيزياء - عن بُعد وحضوريًا',
+          'book-khaled': 'احجز',
+          'view-teachers': 'عرض المزيد',
+          'sub-physics': 'الفيزياء',
+          'sub-biology': 'الأحياء',
+          'sub-chemistry': 'الكيمياء',
+          'sub-english': 'الإنجليزية',
+          'sub-arabic': 'العربية',
+          'sub-math': 'الرياضيات',
+          'view-subjects': 'عرض المزيد'
+        }
+      };
+
+      for (const id in translations[lang]) {
+        const element = document.getElementById(id);
+        if (element) {
+          element.textContent = translations[lang][id];
+        }
+      }
+
+      document.body.style.direction = lang === 'ar' ? 'rtl' : 'ltr';
+    }
+  </script>
+
+</body>
+</html>

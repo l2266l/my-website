@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student/Parent Login</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #d0eaff; /* light blue */
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .or-divider {
+      margin: 20px 0;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+
+  <!-- Google Sign-In script -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Login as Student or Parent</h2>
+
+    <!-- Google Sign-In -->
+    <div id="g_id_onload"
+      data-client_id="517961306953-uc2pmelkvuq0ji44moebff6786hsci21.apps.googleusercontent.com"
+      data-context="signin"
+      data-ux_mode="popup"
+      data-callback="handleCredentialResponse">
+    </div>
+
+    <div class="g_id_signin"
+      data-type="standard"
+      data-size="large"
+      data-theme="outline"
+      data-text="signin_with"
+      data-shape="rectangular">
+    </div>
+
+    <div class="or-divider">OR</div>
+
+    <!-- Manual Login Form -->
+    <form id="manualLogin">
+      <input type="text" placeholder="First Name" required><br>
+      <input type="text" placeholder="Last Name" required><br>
+      <input type="email" placeholder="Email" required><br>
+      <button type="submit">Continue</button>
+    </form>
+  </div>
+
+  <script>
+    function handleCredentialResponse(response) {
+      console.log("Encoded JWT ID token: " + response.credential);
+      alert("Logged in with Google!");
+      // You can redirect or save info here
+    }
+
+    document.getElementById("manualLogin").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Logged in manually!");
+      // You can redirect or save info here too
+    });
+  </script>
+</body>
+</html>
